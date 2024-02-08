@@ -1,11 +1,11 @@
 #!/bin/bash
-FILENAME=prom2v240.zip
+FILENAME=prom2v266.zip
 #FOLDERNM="Prominence II [RPG] Server Pack v2.4.0"
 VARTMP="template.txt"
 VARPMT="variables.txt"
 PROPTMP="server.properties.tmp"
 PROPPMT="server.properties"
-URL="https://www.curseforge.com/api/v1/mods/466901/files/5009704/download"
+URL="https://www.curseforge.com/api/v1/mods/466901/files/5087952/download"
 
 #Function to download modpack
 dl_modpack() {
@@ -20,6 +20,9 @@ unzip_modpack() {
 
 #Moves into data directory
 cd /data
+
+#Clean up old files
+rm -rf config defaultconfigs mods
 
 #checks if there is a current modpack installation
 if [ -f "$FILENAME" ]; then
