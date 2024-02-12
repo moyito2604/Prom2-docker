@@ -21,9 +21,6 @@ unzip_modpack() {
 #Moves into data directory
 cd /data
 
-#Clean up old files
-rm -rf config defaultconfigs mods
-
 #checks if there is a current modpack installation
 if [ -f "$FILENAME" ]; then
     echo "Installation Exists"
@@ -47,7 +44,9 @@ if [ -f "$FILENAME" ]; then
         cp $PROPPMT $PROPTMP
     fi
 else
-    
+    #Clean up old files
+    rm -rf config defaultconfigs mods
+
     #If there is no installation, it downloads the modpack and creates the installation
     dl_modpack
     unzip_modpack
