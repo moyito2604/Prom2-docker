@@ -1,11 +1,11 @@
 #!/bin/bash
-FILENAME=prom2v266.zip
-#FOLDERNM="Prominence II [RPG] Server Pack v2.4.0"
+FILENAME=prom2v285.zip
+#FOLDERNM="Prominence II [RPG] Server Pack v2.8.5"
 VARTMP="template.txt"
 VARPMT="variables.txt"
 PROPTMP="server.properties.tmp"
 PROPPMT="server.properties"
-URL="https://www.curseforge.com/api/v1/mods/466901/files/5087952/download"
+URL="https://www.curseforge.com/api/v1/mods/466901/files/5380858/download"
 
 #Function to download modpack
 dl_modpack() {

@@ -32,3 +32,5 @@ RCON can be enabled as well by setting the following two arguments
 ```
 
 The default password is ```changeme``` if it isn't changed in the argument
+
+The client-side modpack can be found [here](https://www.curseforge.com/minecraft/modpacks/prominence-2-rpg)

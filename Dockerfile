@@ -1,12 +1,16 @@
-FROM eclipse-temurin:18-jdk-alpine
+FROM eclipse-temurin:17-jdk-jammy
+
+# Adding Labels to identify repository for github
+LABEL org.opencontainers.image.source=https://github.com/moyito2604/Prom2-docker
+LABEL org.opencontainers.image.description="Containerized Version of Prominence 2 Modpack"
 
 #Sets up the workspace
 VOLUME ["/data"]
 WORKDIR /
 
 #Updates the container and installs dependencies
-RUN apk update
-RUN apk add --no-cache zip unzip wget bash curl
+RUN apt update
+RUN apt install -y zip unzip wget bash curl
 
 #Exposes the port and copies scripts
 EXPOSE 25565/tcp
