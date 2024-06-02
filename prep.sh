@@ -23,7 +23,6 @@ cd /data
 #checks if there is a current modpack installation
 if [ -f "$FILENAME" ]; then
     echo "Installation Exists"
-    rm -rf $VARIABLES
 
     #Ensures there is a valid server.properties template file
     if [ -f "$PROPTMP" ]; then
@@ -51,8 +50,8 @@ echo eula=true > eula.txt
 OLDVARS=$(cat $VARIABLES | grep JAVA_ARGS)
 echo ""
 echo "Variables:"
-sed 's%$OLDVARS%JAVA_ARGS="'"$JAVA_ARGS "'%' $VARIABLES
-sed -i 's%$OLDVARS%JAVA_ARGS="'"$JAVA_ARGS "'%' $VARIABLES
+sed "s%$OLDVARS%JAVA_ARGS=\"$JAVA_ARGS\"%" $VARIABLES
+sed -i "s%$OLDVARS%JAVA_ARGS=\"$JAVA_ARGS\"%" $VARIABLES
 
 echo enable-rcon=true>>$PROPERTIES
 echo rcon.password=$RCON_PASS>>$PROPERTIES
