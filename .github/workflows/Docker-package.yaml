@@ -7,7 +7,7 @@ on:
 
 env:
   IMAGE: ${{ github.repository_owner }}/prom2-docker
-  VERSION: v2.8.5
+  VERSION: v2.8.6hf
 
 jobs:
   build_and_publish:

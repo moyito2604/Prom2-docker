@@ -34,3 +34,20 @@ RCON can be enabled as well by setting the following two arguments
 The default password is ```changeme``` if it isn't changed in the argument
 
 The client-side modpack can be found [here](https://www.curseforge.com/minecraft/modpacks/prominence-2-rpg)
+
+Example Docker Compose:
+```
+services:
+    prom2-docker:
+        container_name: Prominence2
+        volumes:
+            - /path/to/prominencedata:/data
+        ports:
+            - 25566:25565
+            # Exposes RCON out
+            - 25575:25575
+        environment:
+            - JAVA_ARGS=-Xms6G -Xmx20G
+            - RCON_PASS=Password
+        image: moyito2604/prom2-docker
+```
